@@ -1,5 +1,4 @@
-mgRDA <-
-function(genD, vectorsMEM, perm=NULL, full=TRUE) {
+mgRDA <- function(genD, vectorsMEM, perm=NULL, full=TRUE) {
     
     
     ## Internal function to do RDA on a genetic distance matrix
@@ -35,8 +34,8 @@ function(genD, vectorsMEM, perm=NULL, full=TRUE) {
         
         if (full) {
             ## PCA on predicted values
-            prC <- princomp(predicted)
-            rdaPrC <- prC$scores
+            prC <- prcomp(predicted)
+            rdaPrC <- prC$x
             rdaSdev <- prC$sdev
             dimnames(rdaPrC)[[2]] <- paste("MEMGENE", 1:ncol(rdaPrC), sep="")
             names(rdaSdev) <- paste("MEMGENE", 1:length(rdaSdev), sep="")
