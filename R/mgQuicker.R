@@ -10,7 +10,7 @@ mgQuicker <- function(geoD, genD){
   # calculate mem varible for geoD
   mem <- memgeneMod::mgMEM(geoD)
   pos_mem <- mem$vectorsMEM[, mem$valuesMEM > 0]
-  neg_mem <- mem$vectorsMEM[, mem$valuesMEM < 0]
-  posRDA <- mgRDA(genD, pos_mem)
-  
+  #neg_mem <- mem$vectorsMEM[, mem$valuesMEM < 0]
+  posRDA <- memgeneMod::mgRDA(genD, pos_mem)
+  return(posRDA)
 }
